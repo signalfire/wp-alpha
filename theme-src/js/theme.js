@@ -21,11 +21,10 @@ class SignalfireTheme {
   }
 
   setup() {
-    
     // Initialize components
     this.mobileMenu = new MobileMenu();
     this.smoothScroll = new SmoothScroll();
-    
+
     // Add any global theme functionality here
     this.setupAccessibility();
     this.setupLazyLoading();
@@ -35,7 +34,7 @@ class SignalfireTheme {
     // Add skip link functionality
     const skipLink = document.querySelector('.skip-link');
     if (skipLink) {
-      skipLink.addEventListener('click', (e) => {
+      skipLink.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(skipLink.getAttribute('href'));
         if (target) {
@@ -46,7 +45,7 @@ class SignalfireTheme {
     }
 
     // Improve focus management for keyboard navigation
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', e => {
       if (e.key === 'Tab') {
         document.body.classList.add('user-is-tabbing');
       }

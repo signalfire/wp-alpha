@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Custom component layer */
 @layer components {
@@ -70,14 +70,16 @@
     width: auto;
     min-width: 200px;
     background-color: white;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
     border: 1px solid rgb(229 231 235);
     border-radius: 0.5rem;
     padding: 0.5rem 0;
     z-index: 50;
     margin-top: 0.25rem;
   }
-  
+
   @media (min-width: 768px) {
     #primary-menu.mobile-open {
       display: none !important;
@@ -125,7 +127,7 @@
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .container-prose {
     @apply container mx-auto max-w-4xl px-4;
   }
@@ -147,16 +149,33 @@
 /* WordPress editor styles */
 .entry-content {
   /* Style for WordPress blocks */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold text-gray-900 mb-4;
   }
 
-  h1 { @apply text-3xl; }
-  h2 { @apply text-2xl; }
-  h3 { @apply text-xl; }
-  h4 { @apply text-lg; }
-  h5 { @apply text-base; }
-  h6 { @apply text-sm; }
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  h4 {
+    @apply text-lg;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm;
+  }
 
   p {
     @apply mb-4 text-gray-700 leading-relaxed;
@@ -166,7 +185,8 @@
     @apply text-blue-600 hover:text-blue-700 underline transition-colors;
   }
 
-  ul, ol {
+  ul,
+  ol {
     @apply mb-4 pl-6;
   }
 
@@ -206,7 +226,8 @@
     @apply w-full border-collapse mb-4;
   }
 
-  th, td {
+  th,
+  td {
     @apply border border-gray-300 px-4 py-2 text-left;
   }
 
@@ -215,6 +236,6 @@
   }
 }
 
-body{
+body {
   @apply bg-gray-50;
 }
