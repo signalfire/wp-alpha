@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+/* Custom component layer */
+@layer components {
+  /* Button component example */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-600;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-500;
+  }
+
+  .btn-outline {
+    @apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-gray-500;
+  }
+
+  .btn-ghost {
+    @apply text-gray-700 hover:bg-gray-100 focus:ring-gray-500;
+  }
+
+  /* Card component example */
+  .card {
+    @apply bg-white border border-gray-200 rounded-lg shadow-sm;
+  }
+
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-200;
+  }
+
+  .card-body {
+    @apply px-6 py-4;
+  }
+
+  .card-footer {
+    @apply px-6 py-4 border-t border-gray-200 bg-gray-50;
+  }
+
+  /* Navigation component */
+  .nav-link {
+    @apply text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+  }
+
+  .nav-link.active {
+    @apply text-blue-600 bg-blue-50;
+  }
+
+  /* Mobile menu specific styles */
+  .main-navigation {
+    @apply relative;
+  }
+
+  .menu-toggle {
+    @apply md:hidden bg-gray-100 hover:bg-gray-200 p-2 rounded transition-colors;
+  }
+
+  #primary-menu {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  #primary-menu.mobile-open {
+    display: block !important;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: auto;
+    min-width: 200px;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border: 1px solid rgb(229 231 235);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    z-index: 50;
+    margin-top: 0.25rem;
+  }
+  
+  @media (min-width: 768px) {
+    #primary-menu.mobile-open {
+      display: none !important;
+    }
+  }
+
+  #primary-menu.mobile-open li {
+    margin: 0;
+    list-style: none;
+  }
+
+  #primary-menu.mobile-open a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: rgb(55 65 81);
+    text-decoration: none;
+    text-align: left;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  #primary-menu.mobile-open a:hover {
+    background-color: rgb(249 250 251);
+    color: rgb(37 99 235);
+  }
+
+  /* Form components */
+  .form-input {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 mt-1;
+  }
+}
+
+/* Custom utility layer */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .container-prose {
+    @apply container mx-auto max-w-4xl px-4;
+  }
+
+  /* WordPress specific utilities */
+  .wp-block-image {
+    @apply mb-6;
+  }
+
+  .wp-block-quote {
+    @apply border-l-4 border-blue-500 pl-4 italic text-gray-700;
+  }
+
+  .wp-block-pullquote {
+    @apply text-xl font-medium text-center py-8 border-t border-b border-gray-200 my-8;
+  }
+}
+
+/* WordPress editor styles */
+.entry-content {
+  /* Style for WordPress blocks */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900 mb-4;
+  }
+
+  h1 { @apply text-3xl; }
+  h2 { @apply text-2xl; }
+  h3 { @apply text-xl; }
+  h4 { @apply text-lg; }
+  h5 { @apply text-base; }
+  h6 { @apply text-sm; }
+
+  p {
+    @apply mb-4 text-gray-700 leading-relaxed;
+  }
+
+  a {
+    @apply text-blue-600 hover:text-blue-700 underline transition-colors;
+  }
+
+  ul, ol {
+    @apply mb-4 pl-6;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  li {
+    @apply mb-1;
+  }
+
+  blockquote {
+    @apply border-l-4 border-blue-500 pl-4 italic text-gray-700 mb-4;
+  }
+
+  code {
+    @apply bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  pre {
+    @apply bg-gray-100 text-gray-800 p-4 rounded-lg overflow-x-auto mb-4;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+  }
+
+  img {
+    @apply max-w-full h-auto rounded-lg;
+  }
+
+  table {
+    @apply w-full border-collapse mb-4;
+  }
+
+  th, td {
+    @apply border border-gray-300 px-4 py-2 text-left;
+  }
+
+  th {
+    @apply bg-gray-50 font-semibold;
+  }
+}
+
+body{
+  @apply bg-gray-50;
+}

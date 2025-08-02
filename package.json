@@ -1,0 +1,44 @@
+{
+  "name": "signalfire-wp-alpha",
+  "version": "1.0.0",
+  "description": "A modern, minimal WordPress theme scaffold with Tailwind CSS v4 and Vite",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:hmr": "vite",
+    "dev:watch": "vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint theme-src --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write \"theme-src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\""
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0-alpha.25",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.10.0",
+    "autoprefixer": "^10.4.16",
+    "chokidar": "^3.5.3",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.0",
+    "tailwindcss": "^4.0.0-alpha.25",
+    "vite": "^5.0.0",
+    "ws": "^8.14.2"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "keywords": [
+    "wordpress",
+    "theme",
+    "tailwindcss",
+    "vite",
+    "modern",
+    "minimal"
+  ],
+  "author": "Developer",
+  "license": "GPL-2.0-or-later"
+}
